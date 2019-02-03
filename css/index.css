@@ -1,0 +1,13 @@
+#engword{
+    font-style: italic;
+}
+
+#chineseword{
+    color: green;
+    margin:0;
+}
+
+#pinword{
+    color: blue;
+    
+}

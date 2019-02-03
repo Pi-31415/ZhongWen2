@@ -1,0 +1,41 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body style="font-family: sans-serif">
+    <br><br><center>
+    <h1><div id="xchin"></div></h1>
+    <h3><div id="xpinyin"></div></h3>
+    <div id="xeng"></div>
+</center>
+    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+    <script src="testjs.js"></script>
+    <script>
+    
+    function log(a){
+        console.log(a);
+    }
+
+    function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) ) + min;
+    }
+        
+    var n = 0;
+    
+    n = getRndInteger(0,hanzi.length)
+        
+    var xchin = document.getElementById("xchin");
+    var xpinyin = document.getElementById("xpinyin");
+    var xeng = document.getElementById("xeng");
+    
+    responsiveVoice.speak(hanzi[n], "Chinese Male", {rate: 1.0});    
+    
+    xchin.innerHTML = hanzi[n];
+    xpinyin.innerHTML = pinyin[n];
+    xeng.innerHTML = eng[n];
+    
+    
+        
+    </script>
+</body>
+</html>
