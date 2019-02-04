@@ -38,6 +38,14 @@ function speak() {
     });
 }
 
+function speakk(k) {
+    speaker = "Chinese Female";
+    speed = 0.95;
+    responsiveVoice.speak(k, speaker, {
+        rate: speed
+    });
+}
+
 //the following are the main toggle functions
 //Setup
 xeng.innerHTML = geteng(n);
@@ -114,7 +122,7 @@ function chincheck() {
 
 function nextword() {
     clrscr();
-    n = getRndInteger(0, mand.length);
+    n = getRndInteger(0, mand.length-1);
     xeng.innerHTML = geteng(n);
 xchin.innerHTML = getmand(n);
 xpinyin.innerHTML = getpin(n);
@@ -129,6 +137,26 @@ xpinyin.innerHTML = getpin(n);
     //hide
     toggle(check);
 
+}
+
+//Function for displaying words
+
+function showtable(){
+    //alert("Hello");
+    
+    var disp = document.getElementById("displaytable");
+    var tabdata = "";
+    var k;
+    var imglink = "Unknown";
+    for(k=0;k<mand.length;k++){
+        
+        //img function
+        
+        tabdata += "<tr><td>"+(k+1)+"</td><td style='color:blue;' onclick='speakk(\""+mand[k]+"\")'><span class ='link' >"+mand[k]+"</span></td><td>"+pinyin[k].toLowerCase()+"</td><td>"+eng[k]+"</td></tr>";
+        
+    }
+    disp.innerHTML = tabdata;
+    
 }
 
 
